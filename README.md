@@ -1,5 +1,11 @@
 # Two-Ts
 
-The Two-Ts robotic head was developed by Tamires dos Santos and Wagner Tanaka Botelho.
+Master's work in Computer Science at the Federal University of ABC (UFABC).
 
-This repóttorio has the main head development files, the CAD-D files can be accessed at https://encurtador.com.br/diFGV (Two_Ts_Virtual.f3z) and the Skull of Two-Ts at https://encurtador.com.br/kuJN8 (Cranio_Two-Ts.mix).
+Title of Work: Two-Ts: Reproduction of Facial Expressions in Robotic Head with 3D Technology;
+Student: Tamires dos Santos;
+Advisor: Wagner Tanaka Botelho.
+
+This repository has the main development files, the CAD-D files can be accessed at https://encurtador.com.br/diFGV (Two_Ts_Virtual.f3z) and the Skull of Two-Ts at https://encurtador.com.br/kuJN8 (Cranio_Two-Ts.mix).
+
+[![Watch the video]](https://youtu.be/udqf8mTrStc)
