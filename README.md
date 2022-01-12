@@ -1,58 +1,58 @@
-<h1 align="center">Cabeça Robótica <i>Two-Ts</i></h1>
+<h1 align="center"><i>Two-Ts</i> Robotic Head</h1>
 
-## Descrição
+## Description
 
 <p align="justify"> 
-  Trabalho de Mestrado em Ciência da Computação da Universidade Federal do ABC (UFABC).
+  Master's degree in Computer Science at Federal University of ABC.
   
-  Título do Trabalho: Two-Ts: Reprodução de Expressões Faciais em Cabeça Robótica com Tecnologia 3D. 
-  
-  Discente: Tamires dos Santos;
-  
-  Orientador: Wagner Tanaka Botelho.
+  Title of Work: <i>Two-Ts</i>: Reproduction of Facial Expressions in Robotic Head with 3D Technology.
+
+  Student: Tamires dos Santos;
+
+  Advisor: Wagner Tanaka Botelho.
 </p>
   
 
-## Arquivos
+## Files
 
-+ Expressions_Two_Ts.ipynb -> Código implementado para validar as expressões da Two-Ts virtual, real e da face da discente;
++ Expressions_Two_Ts.ipynb -> Code implemented to validate the facial expressions of Tamires, <i>Two-Ts</i> Virtual and Real;
 
-+ BasicMoves_TwoTs.py -> Código implementado para a realização dos movimentos básicos na Two-Ts real;
++ BasicMoves_TwoTs.py -> Code implemented for the realization of basic movements in the <i>Two-Ts</i> Real;
 
-+ Emotions_TwoTs.py -> Código implementado para a realização das emoções básicas e universais na Two-Ts real;
++ Emotions_TwoTs.py -> Code implemented for the realization of basic and universal emotions in <i>Two-Ts</i> Real;
 
-+ Virtual_TwoTs.py -> Código implementado para a realização dos movimentos básicos e das emoções básicas e universais na Two-Ts virtual;
++ Virtual_TwoTs.py -> Code implemented for the realization of basic movements and basic and universal emotions in <i>Two-Ts</i> Virtual;
 
-+ [Two_Ts_Virtual.f3z](https://encurtador.com.br/diFGV) -> CAD-3D da Two-Ts;
++ [Two_Ts_Virtual.f3z](https://encurtador.com.br/diFGV) -> CAD-3D by <i>Two-Ts</i>;
 
-+ [CAD Cranio_Two-Ts.mix](https://encurtador.com.br/kuJN8) -> CAD-3D do crânio da Two-Ts.
++ [CAD Cranio_Two-Ts.mix](https://encurtador.com.br/kuJN8) -> <i>Two-Ts</i> skull CAD-3D.
 
 
 
-## Vídeos
+## Videos
 
-+ Movimentos Básicos da Two-Ts Virtual: O vídeo mostra os movimentos básicos realizados pela Two-Ts durante a simulação.
++ Basic Movements of <i>Two-Ts</i> Virtual: The video shows the basic movements performed by <i>Two-Ts</i> during the simulation.
 
 <!--[![](https://img.youtube.com/vi/udqf8mTrStc/0.jpg)](https://youtu.be/udqf8mTrStc)-->
 [<img src="https://img.youtube.com/vi/udqf8mTrStc/0.jpg" width="350"/>](https://youtu.be/udqf8mTrStc)
 
 
-+ Movimentos Básicos da Two-Ts Real: O vídeo mostra os movimentos básicos realizados pela Two-Ts real.
++ Basic Movements of <i>Two-Ts</i> Real: The video shows the basic movements performed by <i>Two-Ts</i> Real.
 
 [<img src="https://img.youtube.com/vi/5K1MpseIagA/0.jpg" width="350"/>](https://youtu.be/5K1MpseIagA)
 
 
-+ Emoções Básicas e Universais na Two-Ts Virtual: O vídeo mostra as emoções básicas e universais reproduzidas pela Two-Ts durante a simulação.
++ Basic and Universal Emotions in <i>Two-Ts</i> Virtual: The video shows the basic and universal emotions reproduced by <i>Two-Ts</i> during the simulation.
 
 [<img src="https://img.youtube.com/vi/pIZDx-OqKEg/0.jpg" width="350"/>](https://youtu.be/pIZDx-OqKEg)
 
 
-+ Emoções Básicas e Universais na Two-Ts Real: O vídeo mostra as emoções básicas e universais reproduzidas pela Two-Ts real.
++ Basic and Universal Emotions in <i>Two-Ts</i> Real: The video shows the basic and universal emotions reproduced by <i>Two-Ts</i> Real.
 
 [<img src="https://img.youtube.com/vi/z0KJ2hzK7wY/0.jpg" width="350"/>](https://www.youtube.com/watch?v=z0KJ2hzK7wY)
 
 
 
-## Bolsas Recebidas
-+ Treinamento Técnico (TT-3) do Programa PIPE da Fundação de Amparo à Pesquisa do Estado de São Paulo - FAPESP, com o processo número 2019/08079-1, pela  Startup NTU Software Technology do Projeto PIPE Fase 2 (Processo Número: 2018/04306-0) no período de Junho/2019 a Maio/2020;
-+ Bolsa de mestrado da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) no período de Outubro/2020 a Fevereiro/2021.
+## Scholarships Received
++ Technical Training (TT-3) of the PIPE Program of the São Paulo Research Support Foundation, with process number 2019/08079-1, by Startup NTU Software Technology of the PIPE Phase 2 Project (Process Number: 2018/04306-0) from June/2019 to May/2020;
++ Master's Scholarship from the Coordination for the Improvement of Higher Education Personnel from October/2020 to February/2021.
