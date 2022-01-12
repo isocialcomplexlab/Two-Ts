@@ -3,16 +3,16 @@
 
 #######################################################
 #                      TWO-TS
-# Trabalho de Mestrado em Ciência da Computação da Universidade Federal do ABC (UFABC);
-# Título do Trabalho: Two-Ts: Reprodução de Expressões Faciais em Cabeça Robótica com Tecnologia 3D;
-# Discente: Tamires dos Santos;
-# Orientador: Wagner Tanaka Botelho;
+# Master's degree in Computer Science at the Federal University of ABC;
+# Title of Work: Two-Ts: Reproduction of Facial Expressions in Robotic Head with 3D Technology;
+# Student: Tamires dos Santos;
+# Advisor: Wagner Tanaka Botelho;
 #
-# Descrição:  Movimentos da TWO-TS virtual (Fusion 360).
+# Description:  Movements of the TWO-TS virtual (Fusion 360 simulator).
 #
-# Princiapis referências: https://modthemachine.typepad.com/my_weblog/2016/08/drive-robot-arm-in-fusion.html
+# Main references: https://modthemachine.typepad.com/my_weblog/2016/08/drive-robot-arm-in-fusion.html
 # 
-# Data de Modificação: 27/05/2021
+# Modification Date: 05/27/2021
 #######################################################
 
 import adsk.core, adsk.fusion, adsk.cam, traceback
@@ -24,8 +24,8 @@ if app:
     ui = app.userInterface
     
 # Variaveis 
-handlers = [] #ref para os eventos
-commandName = "Unidade de Acoes"
+handlers = [] 
+commandName = "Action Units"
 
 joint1Name = None
 joint2Name = None
@@ -81,28 +81,28 @@ bocaSupEsq = None
 bocaInfDir = None
 bocaInfEsq = None
 
-## UAs
-ua51 = 0 #rotacao esquerda
-ua52 = 0 #rotacao direita
-ua53 = 0 #cima
-ua54 = 0 #baixo
-ua55 = 0 #cabecaEsquerda
-ua56 = 0 #cabecaDireita
+## AUs
+au51 = 0 #rotacao esquerda
+au52 = 0 #rotacao direita
+au53 = 0 #cima
+au54 = 0 #baixo
+au55 = 0 #cabecaEsquerda
+au56 = 0 #cabecaDireita
 
-ua61 = 0 #olhos para esquerda
-ua62 = 0 #olhos para direita
+au61 = 0 #olhos para esquerda
+au62 = 0 #olhos para direita
 
 palpebraEsquerda = 0 
 palpebraDireta = 0 
 
 
-#emocoes
-felicidade = 0
-medo = 0 
-raiva = 0
-nojo = 0
-surpresa = 0 
-tristeza =0
+#Emotions
+happiness = 0
+fear = 0
+anger = 0
+disgust = 0
+surprise = 0
+sadness = 0
 
 
 def calculateJoint(value, signal, joint, position):
@@ -121,7 +121,7 @@ def calculateJoint(value, signal, joint, position):
             vp.refresh()
 
 
-# Definicao das funcoes de cada botao
+#Definition of the functions of each button
 class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
     def __init__(self):
         super().__init__()
@@ -130,7 +130,7 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
         eventArgs = adsk.core.InputChangedEventArgs.cast(args)
         commandInput = eventArgs.input
         
-        global ua51, ua52, ua53, ua54, ua55, ua56, ua61, ua62
+        global au51, au52, au53, au54, au55, au56, au61, au62
         
         global joint1, joint2, joint3, joint4, joint5, joint6, joint7, joint8, joint9, joint10, joint11
         
@@ -142,21 +142,20 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
         global bocaSupDir, bocaSupEsq, bocaInfDir, bocaInfEsq
 
-        global felicidade, medo, raiva, nojo, surpresa, tristeza
+        global happiness, fear, anger, disgust, surprise, sadness
         
 
         if commandInput.id == commandName + '_51':
-            ua51 = commandInput.value
-            if ua51 == True:
+            au51 = commandInput.value
+            if au51 == True:
                 value = 15
                 signal = 1
                 position = 0
                 calculateJoint(5, signal, joint1, position)
-
                 app = adsk.core.Application.get()
                 product = app.activeProduct
                 design = adsk.fusion.Design.cast(product)
-                root =design.rootComponent
+                root = design.rootComponent
                 olho = root.occurrences.itemByName("Estrutura_olhos v34:1")
                 trans = olho.transform
                 ui.messageBox('Delay')
@@ -174,8 +173,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 
 
         elif commandInput.id == commandName + '_52':
-            ua52 = commandInput.value
-            if ua52 == True:
+            au52 = commandInput.value
+            if au52 == True:
                 value = 15
                 signal = -1
                 position = 0
@@ -202,13 +201,13 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
 
         elif commandInput.id == commandName + '_55':
-            ua55 = commandInput.value
-            if ua55 == True:
+            au55 = commandInput.value
+            if au55 == True:
                 value = 25
                 signal = -1
                 position = 0
                 calculateJoint(value, signal, joint3, position)
-                #time.sleep()
+                #time.sleep(1)
                 value = 145
                 signal = 1
                 position = 170
@@ -216,7 +215,7 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 app = adsk.core.Application.get()
                 product = app.activeProduct
                 design = adsk.fusion.Design.cast(product)
-                root =design.rootComponent
+                root = design.rootComponent
                 olho = root.occurrences.itemByName("Estrutura_olhos v34:1")
                 trans = olho.transform
                 ui.messageBox('Delay')
@@ -229,8 +228,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
 
         elif commandInput.id == commandName + '_56':
-            ua56 = commandInput.value
-            if ua56 == True:
+            au56 = commandInput.value
+            if au56 == True:
                 value = 25
                 signal = -1
                 position = 0
@@ -242,7 +241,7 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 app = adsk.core.Application.get()
                 product = app.activeProduct
                 design = adsk.fusion.Design.cast(product)
-                root =design.rootComponent
+                root = design.rootComponent
                 olho = root.occurrences.itemByName("Estrutura_olhos v34:1")
                 trans = olho.transform
                 ui.messageBox('Delay')
@@ -255,8 +254,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
             
         elif commandInput.id == commandName + '_53':
-            ua53 = commandInput.value
-            if ua53 == True:
+            au53 = commandInput.value
+            if au53 == True:
                 value = 25
                 signal = -1
                 position = 0
@@ -276,7 +275,7 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 app = adsk.core.Application.get()
                 product = app.activeProduct
                 design = adsk.fusion.Design.cast(product)
-                root =design.rootComponent
+                root = design.rootComponent
                 olho = root.occurrences.itemByName("Estrutura_olhos v34:1")
                 trans = olho.transform
                 ui.messageBox('Delay')
@@ -287,9 +286,10 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 ui.messageBox("Delay")
                 time.sleep(4)
         
+        
         elif commandInput.id == commandName + '_54':
-            ua54 = commandInput.value
-            if ua54 == True:
+            au54 = commandInput.value
+            if au54 == True:
                 value = 25
                 signal = 1
                 position = 0
@@ -309,7 +309,7 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 app = adsk.core.Application.get()
                 product = app.activeProduct
                 design = adsk.fusion.Design.cast(product)
-                root =design.rootComponent
+                root = design.rootComponent
                 olho = root.occurrences.itemByName("Estrutura_olhos v34:1")
                 trans = olho.transform
                 ui.messageBox('Delay')
@@ -322,8 +322,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
         
 
         elif commandInput.id == commandName + '_61':
-            ua61 = commandInput.value
-            if ua61 == True:
+            au61 = commandInput.value
+            if au61 == True:
                 value = 5
                 signal = -1
                 position = 0
@@ -341,8 +341,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
             
 
         elif commandInput.id == commandName + '_62':
-            ua62 = commandInput.value
-            if ua62 == True:
+            au62 = commandInput.value
+            if au62 == True:
                 value = 10
                 signal = 1
                 position = 0
@@ -438,8 +438,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 
 
         elif commandInput.id == commandName + '_felicidade':
-            felicidade = commandInput.value
-            if felicidade == True:
+            happiness = commandInput.value
+            if happiness == True:
                 value = 15
                 signal = 1
                 position = 0
@@ -477,9 +477,9 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
         elif commandInput.id == commandName + '_medo':
             ui.messageBox("Delay")
-            medo = commandInput.value
+            fear = commandInput.value
             if medo == True:
-                value = 7
+                fear = 7
                 signal = 1
                 position = 0
                 calculateJoint(value, signal, jointSobDir, position)
@@ -528,8 +528,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
         elif commandInput.id == commandName + '_nojo':
             ui.messageBox("Delay")
-            nojo = commandInput.value
-            if nojo == True:
+            disgust = commandInput.value
+            if disgust == True:
                 value = 10
                 signal = 1
                 position = 0
@@ -552,8 +552,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
         elif commandInput.id == commandName + '_raiva':
             ui.messageBox("Delay")
-            raiva= commandInput.value
-            if raiva== True:
+            anger= commandInput.value
+            if anger == True:
                 value = 10
                 signal = -1
                 position = 0
@@ -604,8 +604,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
         elif commandInput.id == commandName + '_surpresa':
             ui.messageBox("Delay")
-            surpresa = commandInput.value
-            if surpresa == True:
+            surprise = commandInput.value
+            if surprise == True:
                 value = 10
                 signal = -1
                 position = 0
@@ -632,8 +632,8 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
 
         elif commandInput.id == commandName + '_tristeza':
             ui.messageBox("Delay")
-            tristeza = commandInput.value
-            if tristeza == True:
+            sadness = commandInput.value
+            if sadness == True:
                 value = 7
                 signal = 1
                 position = 0
@@ -653,7 +653,6 @@ class MyInputChangedHandler(adsk.core.InputChangedEventHandler):
                 calculateJoint(value, signal, bocaInfEsq, position)
                 time.sleep(4)
 
-      
 
 class MyExecutePreviewHandler(adsk.core.CommandEventHandler):
     def __init__(self):
@@ -665,7 +664,7 @@ class MyExecutePreviewHandler(adsk.core.CommandEventHandler):
         eventArgs.isValidResult = True
         
 
-# Criacao dos botoes
+#Creation of buttons
 class MyCommandCreatedHandler(adsk.core.CommandCreatedEventHandler):    
     def __init__(self):
         super().__init__()        
@@ -687,27 +686,27 @@ class MyCommandCreatedHandler(adsk.core.CommandCreatedEventHandler):
             
             inputs = command.commandInputs
 
-            inputs.addBoolValueInput(commandName + '_51', 'UA 51', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_52', 'UA 52', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_53', 'UA 53', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_54', 'UA 54', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_55', 'UA 55', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_56', 'UA 56', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_61', 'UA 61', True, '', False)
-            inputs.addBoolValueInput(commandName + '_62', 'UA 62', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_palpebraEsq', 'Palpebra Esquerda', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_palpebraDir', 'Palpebra Direita', True, '', False)
-            inputs.addBoolValueInput(commandName + '_maxilar', 'Maxilar', True, '', False) 
-            inputs.addBoolValueInput(commandName + '_sobDir', 'Sob. Direita', True, '', False)
-            inputs.addBoolValueInput(commandName + '_sobEsq', 'Sob. Esquerda', True, '', False)
-            inputs.addBoolValueInput(commandName + '_sobs', 'Sobrancelhas', True, '', False)
+            inputs.addBoolValueInput(commandName + '_51', 'AU 51', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_52', 'AU 52', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_53', 'AU 53', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_54', 'AU 54', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_55', 'AU 55', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_56', 'AU 56', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_61', 'AU 61', True, '', False)
+            inputs.addBoolValueInput(commandName + '_62', 'AU 62', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_palpebraEsq', 'Left eyelid', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_palpebraDir', 'Right eyelid', True, '', False)
+            inputs.addBoolValueInput(commandName + '_maxilar', 'Jaw', True, '', False) 
+            inputs.addBoolValueInput(commandName + '_sobDir', 'Right eyebrow', True, '', False)
+            inputs.addBoolValueInput(commandName + '_sobEsq', 'Left eyebrow', True, '', False)
+            inputs.addBoolValueInput(commandName + '_sobs', 'Eyebrow', True, '', False)
 
-            inputs.addBoolValueInput(commandName + '_felicidade', 'Felicidade', True, '', False)
-            inputs.addBoolValueInput(commandName + '_medo', 'medo', True, '', False)
-            inputs.addBoolValueInput(commandName + '_nojo', 'nojo', True, '', False)
-            inputs.addBoolValueInput(commandName + '_raiva', 'raiva', True, '', False)
-            inputs.addBoolValueInput(commandName + '_surpresa', 'surpresa', True, '', False)
-            inputs.addBoolValueInput(commandName + '_tristeza', 'tristeza', True, '', False)
+            inputs.addBoolValueInput(commandName + '_felicidade', 'Happiness', True, '', False)
+            inputs.addBoolValueInput(commandName + '_medo', 'Fear', True, '', False)
+            inputs.addBoolValueInput(commandName + '_nojo', 'Disgust', True, '', False)
+            inputs.addBoolValueInput(commandName + '_raiva', 'Anger', True, '', False)
+            inputs.addBoolValueInput(commandName + '_surpresa', 'Surprise', True, '', False)
+            inputs.addBoolValueInput(commandName + '_tristeza', 'Sadness', True, '', False)
 
             command.isAutoExecute = True
                 
