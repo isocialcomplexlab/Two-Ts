@@ -37,7 +37,7 @@
 [<img src="https://img.youtube.com/vi/udqf8mTrStc/0.jpg" width="350"/>](https://youtu.be/udqf8mTrStc)
 
 
-+ Basic Movements of <i>Two-Ts</i> Real: The video shows the basic movements performed by <i>Two-Ts</i> Real.
++ Basic Movements of Real <i>Two-Ts</i>: The video shows the basic movements performed by <i>Two-Ts</i> Real.
 
 [<img src="https://img.youtube.com/vi/5K1MpseIagA/0.jpg" width="350"/>](https://youtu.be/5K1MpseIagA)
 
